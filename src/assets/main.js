@@ -5,8 +5,8 @@ function guess() {
     //add functionality to guess function here
 
     // set hidden on initial run
-    if(attempt.value === 0){
-      answer.value = setHiddenFields();
+    if(answer.value === ""){
+      setHiddenFields();
     }
 
     //validate input and return if false
