@@ -68,19 +68,19 @@ function isValueInString(a,b){
   }
   return false;
 }
-function getResults(val,answer){
+function getResults(val){
   tag = document.getElementById('results');
   let glyphs = "";
   val = fourDigits(val);
   let correct = 0;
 
   for(let i = 0; i < 4; i++){
-    if(val[i] == answer[i]){
+    if(val[i] == answer.value[i]){
       //match
       glyphs = glyphs + '<span class="glyphicon glyphicon-ok"></span>';
       correct++;
     }
-    else if(isValueInString(val[i],answer)){
+    else if(isValueInString(val[i],answer.value)){
       //vlaue not in place
       glyphs = glyphs + '<span class="glyphicon glyphicon-transfer"></span>';
     } else {
