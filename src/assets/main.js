@@ -1,7 +1,5 @@
 let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
-answer.value = setHiddenFields();
-
 function guess() {
     let input = document.getElementById('user-guess');
     //add functionality to guess function here
@@ -43,9 +41,9 @@ function fourDigits(str){
 }
 
 function setHiddenFields(){
-    let answer = Math.floor(Math.random() * 10000);//.toString();
-    console.log(fourDigits("answer =" +answer));
-    return fourDigits(answer);
+    let temp = Math.floor(Math.random() * 10000).toString();
+    console.log(fourDigits("answer =" +temp));
+    answer.value = temp;
 }
 function setMessage(val){
   let output = document.getElementById('message');
