@@ -22,8 +22,12 @@ function guess() {
   //Run Check
   if(getResults(input.value,answer.value)){
     setMessage("You Win! :)");
+    showAnswer(answer.value,true);
+    showReplay();
   } else if (attempt.value > 9 ){
       setMessage("You Lose! :(");
+      showAnswer(answer.value,false);
+      showReplay();
   } else{
       setMessage("Incorrect, try again");
   }
@@ -89,4 +93,17 @@ function getResults(val,answer){
   tag.innerHTML = tag.innerHTML + '<div class="row"><strong class="col-md-6">' + val + '</strong><strong class="col-md-6">' + glyphs +'</strong></div>';
   correct = correct === 4 ? correct = true : correct = false;
   return correct;
+}
+function showAnswer(val,bool){
+  if(bool){
+    document.getElementById('code').className = "code success";
+  }else {
+    document.getElementById('code').className = "code failure";
+  }
+  document.getElementById('code').innerHTML = "<strong>"+ val +"</strong>" ;
+}
+
+function showReplay(){
+  document.getElementById('guessing-div').style.display = "none";
+  document.getElementById('replay-div').style.display = "block";
 }
