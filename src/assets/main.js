@@ -20,11 +20,11 @@ function guess() {
   //Run Check
   if(getResults(input.value,answer.value)){
     setMessage("You Win! :)");
-    showAnswer(true, answer.value);
+    showAnswer(true);
     showReplay();
   } else if (attempt.value > 9 ){
       setMessage("You Lose! :(");
-      showAnswer(false, answer.value);
+      showAnswer(false);
       showReplay();
   } else{
       setMessage("Incorrect, try again.");
@@ -92,13 +92,13 @@ function getResults(val){
   correct = correct === 4 ? correct = true : correct = false;
   return correct;
 }
-function showAnswer(bool,val){
+function showAnswer(bool){
   if(bool){
     document.getElementById('code').className = "code success";
   }else {
     document.getElementById('code').className = "code failure";
   }
-  document.getElementById('code').innerHTML = val;
+  document.getElementById('code').innerHTML = answer.value;
 }
 function showReplay(){
   document.getElementById('guessing-div').style.display = "none";
