@@ -98,7 +98,7 @@ function showAnswer(bool,val){
   }else {
     document.getElementById('code').className = "code failure";
   }
-  document.getElementById('code').innerHTML = "<strong>"+ val +"</strong>" ;
+  document.getElementById('code').innerHTML = val;
 }
 function showReplay(){
   document.getElementById('guessing-div').style.display = "none";
