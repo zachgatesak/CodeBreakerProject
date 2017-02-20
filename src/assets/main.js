@@ -29,7 +29,7 @@ function guess() {
       showAnswer(answer.value,false);
       showReplay();
   } else{
-      setMessage("Incorrect, try again");
+      setMessage("Incorrect, try again.");
   }
 
 }
@@ -45,6 +45,7 @@ function fourDigits(str){
 function setHiddenFields(){
     let answer = Math.floor(Math.random() * 10000).toString();
     console.log(fourDigits("answer =" +answer));
+    answer.value = answer;
     return fourDigits(answer);
 }
 function setMessage(val){
