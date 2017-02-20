@@ -43,9 +43,8 @@ function fourDigits(str){
 }
 
 function setHiddenFields(){
-    let answer = Math.floor(Math.random() * 10000).toString();
+    let answer = Math.floor(Math.random() * 10000);//.toString();
     console.log(fourDigits("answer =" +answer));
-    answer.value = answer;
     return fourDigits(answer);
 }
 function setMessage(val){
